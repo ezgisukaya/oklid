@@ -1,0 +1,14 @@
+import math
+points = [(2, 3), (5, 7), (1, 9), (8, 3)]
+
+def euclideanDistance(point1, point2):
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+min_distance = float('inf')
+
+for i in range(len(points)):
+    for j in range(i + 1, len(points)):
+        distance = euclideanDistance(points[i], points[j])
+        if distance < min_distance:
+            min_distance = distance
+
+print("Minimum mesafe:", min_distance)
